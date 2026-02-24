@@ -1,0 +1,22 @@
+{
+  "orientation": {
+    "title": "What Is Photography?",
+    "statement": "Photography, at its most basic level, is the capture of light within a space.\n\nYet contemporary image-making complicates this seemingly simple definition. Processes now exist that simulate, reconstruct, or generate images without traditional photographic methods.\n\nIn this installation, you are the curator.\n\nYou will be shown a series of works. Each is preceded by text — sometimes a question, sometimes a statement — that frames the work in a particular way.\n\nYour task is to decide whether each work belongs in your exhibition.\n\nYour decisions will determine the shape of the installation you create."
+  },
+  "works": [
+    {
+      "id": "work-01",
+      "image": "images/work-01.jpg",
+      "framing_text": "If photography is an index of light, must light be present for something to be considered a photograph?",
+      "context_text": "Black image produced by exposing photographic film with the lens cap in place. No external light reached the photosensitive surface during exposure.",
+      "display_order": 1
+    },
+    {
+      "id": "work-02",
+      "image": "images/work-02.jpg",
+      "framing_text": "Must a photograph reflect human perception to be considered photography?",
+      "context_text": "Camera-less image created by exposing photographic film directly to light. No lens or representational subject was used in the process.",
+      "display_order": 2
+    }
+  ]
+}

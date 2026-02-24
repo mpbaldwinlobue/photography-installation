@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Photography?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Screen: Orientation -->
+  <div id="screen-orientation" class="screen screen-orientation active">
+    <div class="orientation-content">
+      <h1 id="orientation-title" class="orientation-title"></h1>
+      <div id="orientation-statement" class="orientation-statement"></div>
+      <button id="btn-begin" class="nav-btn nav-btn--primary">Begin</button>
+    </div>
+  </div>
+
+  <!-- Screen: Framing Text -->
+  <div id="screen-framing" class="screen screen-framing">
+    <div class="framing-content">
+      <div id="framing-counter" class="framing-counter"></div>
+      <p id="framing-text" class="framing-text"></p>
+    </div>
+    <div class="nav-bar nav-bar--framing">
+      <button id="btn-framing-prev" class="nav-btn nav-btn--dark">&larr; Previous</button>
+      <div class="nav-spacer"></div>
+      <button id="btn-framing-next" class="nav-btn nav-btn--dark nav-btn--primary">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Screen: Artwork + Decision -->
+  <div id="screen-artwork" class="screen screen-artwork">
+    <div class="artwork-layout">
+      <div class="artwork-image-container">
+        <img id="artwork-image" class="artwork-image" src="" alt="Artwork">
+      </div>
+      <div class="artwork-sidebar">
+        <p id="context-text" class="context-text"></p>
+        <label id="include-control" class="include-control">
+          <span class="include-checkbox">
+            <span class="checkmark">&#10003;</span>
+          </span>
+          <span class="include-label">Include in My Installation</span>
+        </label>
+      </div>
+    </div>
+    <div class="nav-bar nav-bar--artwork">
+      <button id="btn-artwork-prev" class="nav-btn">&larr; Previous</button>
+      <div class="nav-spacer"></div>
+      <button id="btn-artwork-next" class="nav-btn nav-btn--primary">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Screen: Arrangement -->
+  <div id="screen-arrangement" class="screen screen-arrangement">
+    <div class="arrangement-header">
+      <h2 class="arrangement-title">Your Installation</h2>
+      <p class="arrangement-subtitle">Drag to reorder. Click &times; to remove.</p>
+    </div>
+    <div id="gallery-grid" class="gallery-grid"></div>
+    <div class="arrangement-actions">
+      <button id="btn-export" class="nav-btn nav-btn--primary">Export My Installation</button>
+      <button id="btn-start-over" class="nav-btn">Start Over</button>
+    </div>
+  </div>
+
+  <!-- Screen: Export Complete -->
+  <div id="screen-export" class="screen screen-export">
+    <div>
+      <p class="export-message">Your installation has been exported.</p>
+      <div class="export-actions">
+        <button id="btn-back-to-gallery" class="nav-btn">Back to Gallery</button>
+        <button id="btn-new-viewer" class="nav-btn nav-btn--primary">New Viewer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/export.js"></script>
+</body>
+</html>
