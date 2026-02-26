@@ -1,22 +1,99 @@
 {
   "orientation": {
-    "title": "What Is Photography?",
-    "statement": "Photography, at its most basic level, is the capture of light within a space.\n\nYet contemporary image-making complicates this seemingly simple definition. Processes now exist that simulate, reconstruct, or generate images without traditional photographic methods.\n\nIn this installation, you are the curator.\n\nYou will be shown a series of works. Each is preceded by text — sometimes a question, sometimes a statement — that frames the work in a particular way.\n\nYour task is to decide whether each work belongs in your exhibition.\n\nYour decisions will determine the shape of the installation you create."
+    "title": "Statement",
+    "statement": "There are 3 sections to this project.\n\nEach section contains 4 to 5 pieces of text and an image that relates to said text.\n\nYou will decide whether each image belongs in your personal exhibition.\n\nYour decisions are your response to the text.\n\nThere are no limits and no wrong answers, I merely ask that you consider each work."
   },
   "works": [
     {
       "id": "work-01",
-      "image": "images/work-01.jpg",
-      "framing_text": "If photography is an index of light, must light be present for something to be considered a photograph?",
-      "context_text": "Black image produced by exposing photographic film with the lens cap in place. No external light reached the photosensitive surface during exposure.",
+      "image": "images/work-01.png",
+      "framing_text": "Photography at its core is the act of creating an image by recording light.",
+      "context_text": "Walker Evans. Interior near Copake, New York. 1933, Gelatin Silver Print.",
       "display_order": 1
     },
     {
       "id": "work-02",
       "image": "images/work-02.jpg",
-      "framing_text": "Must a photograph reflect human perception to be considered photography?",
-      "context_text": "Camera-less image created by exposing photographic film directly to light. No lens or representational subject was used in the process.",
+      "framing_text": "Must photos contain light, or is its absence just as valid?",
+      "context_text": "Michael Lo Bue, Picture of a window with lens cap on, unedited.",
       "display_order": 2
+    },
+    {
+      "id": "work-03",
+      "image": "images/work-03.png",
+      "framing_text": "Must this record match how we as humans experience the world?",
+      "context_text": "John Fobes, Lumen Print 31.",
+      "display_order": 3
+    },
+    {
+      "id": "work-04",
+      "image": "images/work-04.jpg",
+      "framing_text": "Must it be recognizable?",
+      "context_text": "Gary Nichols, 10th place in Nikon 1982 Photomicrography, Single crystal of barium titanate with impurities mounted in immersion oil, polarized, 28x magnification.",
+      "display_order": 4
+    },
+    {
+      "id": "work-05",
+      "image": "images/work-05.jpg",
+      "framing_text": "The photo is an index of light, the captured phenomena is a fact.",
+      "context_text": "Michael Lo Bue, photo of a window with blinds closed.",
+      "display_order": 5
+    },
+    {
+      "id": "work-06",
+      "image": "images/work-06.jpg",
+      "framing_text": "When do we recognize a shift?",
+      "context_text": "Michael Lo Bue, Photo of a window with blinds open (same settings).",
+      "display_order": 6
+    },
+    {
+      "id": "work-07",
+      "image": "images/work-07.jpg",
+      "framing_text": "When does the index change?",
+      "context_text": "Michael Lo Bue, photo of a framed tree.",
+      "display_order": 7
+    },
+    {
+      "id": "work-08",
+      "image": "images/work-08.jpg",
+      "framing_text": "When does it become unrecognizable?",
+      "context_text": "Michael Lo Bue, photo of maximum light exposure.",
+      "display_order": 8
+    },
+    {
+      "id": "work-09",
+      "image": "images/work-09.jpg",
+      "framing_text": "When is the index utterly destroyed?",
+      "context_text": "Michael Lo Bue, photo of maximum light exposure with pixels painted over with white.",
+      "display_order": 9
+    },
+    {
+      "id": "work-10",
+      "image": "images/work-10.jpg",
+      "framing_text": "The boundary of photography is the index, the \u201cfact\u201d. Its expansion lies in implication of something more than truth.",
+      "context_text": "Philippe Halsman, Dali Atomicus, 1948, Gelatin Silver print.",
+      "display_order": 10
+    },
+    {
+      "id": "work-11",
+      "image": "images/work-11.png",
+      "framing_text": "Can a photo be more than a moment?",
+      "context_text": "Michael Lo Bue, picture of pouring colored water.",
+      "display_order": 11
+    },
+    {
+      "id": "work-12",
+      "image": "images/work-12.jpg",
+      "framing_text": "Can it capture sound? Or scent?",
+      "context_text": "Stephen Shore, Beverly Boulevard and La Brea Avenue, Los Angeles, California, June 21, 1975.",
+      "display_order": 12
+    },
+    {
+      "id": "work-13",
+      "image": "images/work-13.jpg",
+      "framing_text": "Emotion?",
+      "context_text": "Moneta Sleet Jr, Correta Scott King and Daughter Bernice at the funeral of Dr. Martin Luther King Jr. 1968, Gelatin Silver Print.",
+      "display_order": 13
     }
   ]
 }
