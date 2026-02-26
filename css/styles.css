@@ -105,6 +105,18 @@ body {
   text-align: center;
 }
 
+.framing-section-header {
+  font-family: var(--font-body);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-framing);
+  margin-bottom: var(--spacing-md);
+}
+
+.framing-section-header:empty {
+  display: none;
+}
+
 .framing-text {
   font-family: var(--font-framing);
   font-size: 1.6rem;

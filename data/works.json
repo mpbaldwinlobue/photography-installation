@@ -7,6 +7,7 @@
     {
       "id": "work-01",
       "image": "images/work-01.png",
+      "section_header": "Section 1",
       "framing_text": "Photography at its core is the act of creating an image by recording light.",
       "context_text": "Walker Evans. Interior near Copake, New York. 1933, Gelatin Silver Print.",
       "display_order": 1
@@ -35,6 +36,7 @@
     {
       "id": "work-05",
       "image": "images/work-05.jpg",
+      "section_header": "Section 2",
       "framing_text": "The photo is an index of light, the captured phenomena is a fact.",
       "context_text": "Michael Lo Bue, photo of a window with blinds closed.",
       "display_order": 5
@@ -70,6 +72,7 @@
     {
       "id": "work-10",
       "image": "images/work-10.jpg",
+      "section_header": "Section 3",
       "framing_text": "The boundary of photography is the index, the \u201cfact\u201d. Its expansion lies in implication of something more than truth.",
       "context_text": "Philippe Halsman, Dali Atomicus, 1948, Gelatin Silver print.",
       "display_order": 10

@@ -26,6 +26,7 @@ const App = (() => {
   const els = {
     orientationTitle: document.getElementById('orientation-title'),
     orientationStatement: document.getElementById('orientation-statement'),
+    framingSectionHeader: document.getElementById('framing-section-header'),
     framingCounter: document.getElementById('framing-counter'),
     framingText: document.getElementById('framing-text'),
     artworkImage: document.getElementById('artwork-image'),
@@ -73,6 +74,7 @@ const App = (() => {
   function renderFraming() {
     const work = state.works[state.currentWorkIndex];
     if (!work) return;
+    els.framingSectionHeader.textContent = work.section_header || '';
     els.framingCounter.textContent = `${state.currentWorkIndex + 1} of ${state.works.length}`;
     els.framingText.textContent = work.framing_text;
   }
