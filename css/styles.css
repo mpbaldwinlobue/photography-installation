@@ -379,6 +379,8 @@ body {
 #screen-final {
   flex-direction: column;
   background: #111;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .final-header {
@@ -386,6 +388,10 @@ body {
   color: #fff;
   border-bottom: 1px solid #333;
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  background: #111;
+  z-index: 10;
 }
 
 .final-header-row {
@@ -422,9 +428,9 @@ body {
 }
 
 .final-canvas {
-  flex: 1;
   position: relative;
-  overflow: hidden;
+  min-width: 100vw;
+  min-height: 2000px;
 }
 
 .final-empty {
