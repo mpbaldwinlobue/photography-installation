@@ -3,87 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What Is Photography?</title>
+  <title>What Deserves to be Included?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Screen: Orientation -->
-  <div id="screen-orientation" class="screen screen-orientation active">
-    <div class="orientation-content">
-      <h1 id="orientation-title" class="orientation-title"></h1>
-      <div id="orientation-statement" class="orientation-statement"></div>
-      <button id="btn-begin" class="nav-btn nav-btn--primary">Begin</button>
-    </div>
-  </div>
-
-  <!-- Screen: Framing Text -->
-  <div id="screen-framing" class="screen screen-framing">
-    <div class="framing-content">
-      <div id="framing-section-header" class="framing-section-header"></div>
-      <div id="framing-counter" class="framing-counter"></div>
-      <p id="framing-text" class="framing-text"></p>
-    </div>
-    <div class="nav-bar nav-bar--framing">
-      <button id="btn-framing-prev" class="nav-btn nav-btn--dark">&larr; Previous</button>
-      <div class="nav-spacer"></div>
-      <button id="btn-framing-next" class="nav-btn nav-btn--dark nav-btn--primary">Next &rarr;</button>
-    </div>
-  </div>
-
-  <!-- Screen: Artwork + Decision -->
-  <div id="screen-artwork" class="screen screen-artwork">
-    <div class="artwork-layout">
-      <div class="artwork-image-container">
-        <img id="artwork-image" class="artwork-image" src="" alt="Artwork">
+  <!-- ===== INTRO SCREEN ===== -->
+  <div id="screen-intro" class="screen active">
+    <div class="intro-content">
+      <h1 class="welcome-title">Welcome</h1>
+      <div class="intro-text">
+        <p>You are entering a participatory installation about photography.</p>
+        <p>This project asks a simple question:<br><strong>What deserves to be included?</strong></p>
+        <p>You will move through three sections:</p>
+        <ul>
+          <li><strong>Process</strong></li>
+          <li><strong>Editing</strong></li>
+          <li><strong>Concept</strong></li>
+        </ul>
+        <p>In each section, you will see a gallery of images.</p>
+        <p>Click any image to enlarge it.<br>Each enlarged image contains contextual text.</p>
+        <p>You must decide:<br>Does this image belong in your version of the installation?</p>
+        <p>Select the works you choose to keep.</p>
+        <p>At the end, you will see the images you selected.<br>You may rearrange, resize, or remove them.</p>
+        <p>The final installation is yours.</p>
       </div>
-      <div class="artwork-sidebar">
-        <p id="context-text" class="context-text"></p>
-        <label id="include-control" class="include-control">
-          <span class="include-checkbox">
-            <span class="checkmark">&#10003;</span>
-          </span>
-          <span class="include-label">Include in My Installation</span>
+      <button id="btn-begin" class="btn btn-begin">Begin</button>
+    </div>
+  </div>
+
+  <!-- ===== SECTION INTRO SCREEN ===== -->
+  <div id="screen-section-intro" class="screen">
+    <div class="section-intro-content">
+      <h2 id="section-title" class="section-title"></h2>
+      <p id="section-text" class="section-text"></p>
+      <div class="section-intro-nav">
+        <button id="btn-section-back" class="btn btn-continue">← Back</button>
+        <button id="btn-section-continue" class="btn btn-continue">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY SCREEN ===== -->
+  <div id="screen-gallery" class="screen">
+    <div class="gallery-header">
+      <h2 id="gallery-title" class="gallery-title"></h2>
+      <span id="gallery-selected-count" class="gallery-selected-count"></span>
+    </div>
+    <div id="photo-grid" class="photo-grid"></div>
+    <div class="gallery-nav">
+      <button id="btn-restart-gallery" class="btn btn-restart">Start Over</button>
+      <button id="btn-gallery-back" class="btn btn-gallery-next">← Back</button>
+      <button id="btn-gallery-next" class="btn btn-gallery-next">Next Section →</button>
+    </div>
+  </div>
+
+  <!-- ===== THEATER MODAL ===== -->
+  <div id="theater-modal" class="theater-modal hidden">
+    <div class="theater-inner">
+      <button id="theater-close" class="theater-close" title="Close">✕</button>
+      <div class="theater-image-wrap">
+        <img id="theater-img" src="" alt="">
+      </div>
+      <div class="theater-sidebar">
+        <p id="theater-context" class="theater-context"></p>
+        <label class="theater-select-label">
+          <input type="checkbox" id="theater-checkbox">
+          <span>Include in My Installation</span>
         </label>
       </div>
     </div>
-    <div class="nav-bar nav-bar--artwork">
-      <button id="btn-artwork-prev" class="nav-btn">&larr; Previous</button>
-      <div class="nav-spacer"></div>
-      <button id="btn-artwork-next" class="nav-btn nav-btn--primary">Next &rarr;</button>
-    </div>
   </div>
 
-  <!-- Screen: Arrangement -->
-  <div id="screen-arrangement" class="screen screen-arrangement">
-    <div class="arrangement-header">
-      <h2 class="arrangement-title">Your Installation</h2>
-      <p class="arrangement-subtitle">Drag to reorder. Click &times; to remove.</p>
-    </div>
-    <div id="gallery-grid" class="gallery-grid"></div>
-    <div class="arrangement-actions">
-      <button id="btn-export" class="nav-btn nav-btn--primary">Export My Installation</button>
-      <button id="btn-start-over" class="nav-btn">Start Over</button>
-    </div>
-  </div>
-
-  <!-- Screen: Export Complete -->
-  <div id="screen-export" class="screen screen-export">
-    <div>
-      <p class="export-message">Your installation has been exported.</p>
-      <div class="export-actions">
-        <button id="btn-back-to-gallery" class="nav-btn">Back to Gallery</button>
-        <button id="btn-new-viewer" class="nav-btn nav-btn--primary">New Viewer</button>
+  <!-- ===== FINAL GALLERY SCREEN ===== -->
+  <div id="screen-final" class="screen">
+    <div class="final-header">
+      <div class="final-header-row">
+        <div>
+          <h2 class="final-title">Your Installation</h2>
+          <p class="final-subtitle">Drag to reposition · Drag corners to resize · Click ✕ to remove</p>
+        </div>
+        <div class="final-header-buttons">
+          <button id="btn-back-final" class="btn btn-gallery-next">← Back</button>
+          <button id="btn-export" class="btn btn-gallery-next">Export</button>
+          <button id="btn-restart-final" class="btn btn-restart">Start Over</button>
+        </div>
       </div>
     </div>
+    <div id="final-canvas" class="final-canvas"></div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/export.js"></script>
 </body>
 </html>
