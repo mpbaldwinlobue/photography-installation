@@ -343,6 +343,10 @@ function addFinalItem(photo, x, y, w, h) {
       e.stopPropagation();
       startResize(e, item, dir);
     });
+    handle.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      startResize(e, item, dir);
+    }, { passive: false });
     item.appendChild(handle);
   });
 
@@ -352,8 +356,38 @@ function addFinalItem(photo, x, y, w, h) {
     if (e.target.classList.contains('final-item-delete')) return;
     startDrag(e, item);
   });
+  item.addEventListener('touchstart', (e) => {
+    if (e.target.classList.contains('resize-handle')) return;
+    if (e.target.classList.contains('final-item-delete')) return;
+    startDrag(e, item);
+  }, { passive: false });
 
   finalCanvas.appendChild(item);
+}
+
+// ============================================================
+//  HELPERS
+// ============================================================
+
+function getCoords(e) {
+  if (e.touches && e.touches.length > 0) {
+    return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }
+  return { x: e.clientX, y: e.clientY };
+}
+
+function addMoveListeners(onMove, onUp) {
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('touchend', onUp);
+}
+
+function removeMoveListeners(onMove, onUp) {
+  document.removeEventListener('mousemove', onMove);
+  document.removeEventListener('mouseup', onUp);
+  document.removeEventListener('touchmove', onMove);
+  document.removeEventListener('touchend', onUp);
 }
 
 // ============================================================
@@ -362,24 +396,22 @@ function addFinalItem(photo, x, y, w, h) {
 
 function startDrag(e, item) {
   e.preventDefault();
-  const startX = e.clientX - item.offsetLeft;
-  const startY = e.clientY - item.offsetTop;
+  const { x, y } = getCoords(e);
+  const startX = x - item.offsetLeft;
+  const startY = y - item.offsetTop;
 
-  // Bring to front
   item.style.zIndex = nextZ();
 
   function onMove(e) {
-    item.style.left = (e.clientX - startX) + 'px';
-    item.style.top  = (e.clientY - startY) + 'px';
+    e.preventDefault();
+    const { x, y } = getCoords(e);
+    item.style.left = (x - startX) + 'px';
+    item.style.top  = (y - startY) + 'px';
   }
 
-  function onUp() {
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onUp);
-  }
+  function onUp() { removeMoveListeners(onMove, onUp); }
 
-  document.addEventListener('mousemove', onMove);
-  document.addEventListener('mouseup', onUp);
+  addMoveListeners(onMove, onUp);
 }
 
 // ============================================================
@@ -389,8 +421,7 @@ function startDrag(e, item) {
 function startResize(e, item, dir) {
   e.preventDefault();
 
-  const startX = e.clientX;
-  const startY = e.clientY;
+  const { x: startX, y: startY } = getCoords(e);
   const startW = item.offsetWidth;
   const startH = item.offsetHeight;
   const startL = item.offsetLeft;
@@ -399,8 +430,10 @@ function startResize(e, item, dir) {
   item.style.zIndex = nextZ();
 
   function onMove(e) {
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
+    e.preventDefault();
+    const { x, y } = getCoords(e);
+    const dx = x - startX;
+    const dy = y - startY;
 
     let newW = startW, newH = startH, newL = startL, newT = startT;
 
@@ -421,13 +454,9 @@ function startResize(e, item, dir) {
     item.style.top    = newT + 'px';
   }
 
-  function onUp() {
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onUp);
-  }
+  function onUp() { removeMoveListeners(onMove, onUp); }
 
-  document.addEventListener('mousemove', onMove);
-  document.addEventListener('mouseup', onUp);
+  addMoveListeners(onMove, onUp);
 }
 
 // ============================================================

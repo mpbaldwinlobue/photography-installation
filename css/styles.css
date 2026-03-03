@@ -12,6 +12,7 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
 }
 
 /* ============================================================
@@ -21,6 +22,7 @@ body {
   display: none;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
 }
 
 .screen.active {
@@ -490,3 +492,87 @@ body {
 .resize-handle.ne { top: -6px;    right: -6px;  cursor: ne-resize; }
 .resize-handle.sw { bottom: -6px; left: -6px;   cursor: sw-resize; }
 .resize-handle.se { bottom: -6px; right: -6px;  cursor: se-resize; }
+
+/* ============================================================
+   TOUCH / MOBILE
+   ============================================================ */
+
+/* Always show delete + resize handles on touch devices */
+@media (hover: none) {
+  .final-item .final-item-delete {
+    opacity: 1;
+    top: -14px;
+    right: -14px;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .final-item .resize-handle {
+    opacity: 1;
+    width: 18px;
+    height: 18px;
+  }
+
+  .final-item .resize-handle.nw { top: -9px;    left: -9px; }
+  .final-item .resize-handle.ne { top: -9px;    right: -9px; }
+  .final-item .resize-handle.sw { bottom: -9px; left: -9px; }
+  .final-item .resize-handle.se { bottom: -9px; right: -9px; }
+}
+
+/* Theater: stack vertically on small screens */
+@media (max-width: 700px) {
+  .theater-inner {
+    flex-direction: column;
+    width: 94vw;
+    height: 90dvh;
+    gap: 16px;
+    overflow-y: auto;
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+
+  .theater-close {
+    top: 8px;
+    right: 8px;
+  }
+
+  .theater-image-wrap {
+    width: 100%;
+    height: 55vw;
+    flex: none;
+  }
+
+  .theater-sidebar {
+    width: 100%;
+  }
+
+  .section-intro-content {
+    padding: 40px 24px;
+    margin: 16px;
+  }
+
+  .gallery-header {
+    padding: 16px 20px 10px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    padding: 12px 20px;
+    gap: 8px;
+  }
+
+  .gallery-nav {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .intro-content {
+    padding: 40px 20px;
+  }
+
+  .welcome-title {
+    font-size: 4rem;
+  }
+}
