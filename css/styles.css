@@ -157,7 +157,7 @@ body {
   flex-direction: column;
   background: #f4ede0;
   overflow: hidden;
-  touch-action: pan-y;
+  touch-action: auto;
 }
 
 .gallery-header {
@@ -186,9 +186,10 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 12px;
   padding: 20px 40px;
-  overflow-y: auto;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   flex: 1;
+  min-height: 0;
   align-content: start;
 }
 
