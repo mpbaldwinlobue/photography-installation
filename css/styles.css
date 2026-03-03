@@ -157,6 +157,7 @@ body {
   flex-direction: column;
   background: #f4ede0;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .gallery-header {
@@ -186,7 +187,9 @@ body {
   gap: 12px;
   padding: 20px 40px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   flex: 1;
+  align-content: start;
 }
 
 .photo-thumb {
@@ -553,19 +556,24 @@ body {
   }
 
   .gallery-header {
-    padding: 16px 20px 10px;
+    padding: 12px 16px 8px;
   }
 
   .photo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    padding: 12px 20px;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 12px;
+    gap: 10px;
   }
 
   .gallery-nav {
-    padding: 12px 20px;
+    padding: 10px 12px;
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .gallery-nav .btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
   }
 
   .intro-content {
