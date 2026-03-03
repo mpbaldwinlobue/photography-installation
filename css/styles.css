@@ -383,6 +383,7 @@ body {
   flex-direction: column;
   background: #111;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -432,7 +433,7 @@ body {
 
 .final-canvas {
   position: relative;
-  min-width: 100vw;
+  width: 100%;
   min-height: 2000px;
 }
 
