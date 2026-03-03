@@ -48,8 +48,8 @@ body {
 #screen-intro {
   background: #000;
   align-items: center;
-  justify-content: center;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .intro-content {
@@ -57,6 +57,7 @@ body {
   text-align: center;
   padding: 60px 24px;
   color: #fff;
+  margin: auto;
 }
 
 .welcome-title {
