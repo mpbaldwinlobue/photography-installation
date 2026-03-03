@@ -156,8 +156,8 @@ body {
 #screen-gallery {
   flex-direction: column;
   background: #f4ede0;
-  overflow: hidden;
-  touch-action: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-header {
@@ -167,6 +167,10 @@ body {
   padding: 24px 40px 12px;
   flex-shrink: 0;
   border-bottom: 1px solid #c9b89a;
+  position: sticky;
+  top: 0;
+  background: #f4ede0;
+  z-index: 10;
 }
 
 .gallery-title {
@@ -186,10 +190,6 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 12px;
   padding: 20px 40px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  flex: 1;
-  min-height: 0;
   align-content: start;
 }
 
